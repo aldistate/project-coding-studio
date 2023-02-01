@@ -29,6 +29,11 @@ use PhpParser\Builder\Function_;
 //     ]);
 // })->name('greeting_with_name');
 
+// menampilkan data sesuai dengan id student
 Route::get('/greeting/{id}', [StudentController::class, 'show']);
 
+// menampilkan semua data
 Route::get('/', [StudentController::class, 'index']);
+
+// menampilkan data yang sudah di filter di controller
+Route::get('/filter', [StudentController::class, 'filter']);

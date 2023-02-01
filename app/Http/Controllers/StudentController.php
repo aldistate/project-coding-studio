@@ -21,6 +21,12 @@ class StudentController extends Controller
         ]);
     }
 
+    public function filter()
+    {
+        $students = Student::where('score', '>=', 75)->get();
+        return view('filter', compact('students'));
+    }
+
     public function show($id)
     {
         $teacher = Student::find($id)->teacher->name;
