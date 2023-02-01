@@ -15,9 +15,9 @@ use PhpParser\Builder\Function_;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/greeting', function () {
 //     return 'Hello World';
@@ -30,3 +30,5 @@ Route::get('/', function () {
 // })->name('greeting_with_name');
 
 Route::get('/greeting/{id}', [StudentController::class, 'show']);
+
+Route::get('/', [StudentController::class, 'index']);
