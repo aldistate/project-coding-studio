@@ -30,7 +30,7 @@ use PhpParser\Builder\Function_;
 // })->name('greeting_with_name');
 
 // menampilkan data sesuai dengan id student
-Route::get('/greeting/{id}', [StudentController::class, 'show']);
+Route::get('/show/{id}', [StudentController::class, 'show'])->name('show');
 
 // menampilkan semua data
 Route::get('/', [StudentController::class, 'index']);

@@ -7,13 +7,14 @@
   <title>Contoh</title>
 </head>
 <body>
-  <p>Hai {{ $name }}, sudah lama yaah kita tidak bertemu dan ngoding bareng</p>
-  <p>Alamat {{ $name }} adalah : {{ $address }}</p>
-  <p>Nomor HP {{ $name }} adalah : {{ $phone }}</p>
-  <p>Wali Kelas {{ $name }} adalah : {{ $teacher }}</p>
+  <p>Hai {{ $students->name }}, sudah lama yaah kita tidak bertemu dan ngoding bareng</p>
+  <p>Alamat {{ $students->name }} adalah : {{ $students->contact->address }}</p>
+  <p>Nomor HP {{ $students->name }} adalah : {{ $students->contact->phone }}</p>
+  <p>Wali Kelas {{ $students->name }} adalah : {{ $students->teacher->name }}</p>
+  <p>Score {{ $students->name }} ialah : {{ $students->score }}</p>
   <br>
-  <p>Murid - murid dari Guru {{ $teacher }} ialah :</p>
-  @foreach ($students  as $student)
+  <p>Murid - murid dari Guru {{ $students->teacher->name }} ialah :</p>
+  @foreach ($teacher->students as $student)
     <ul>
       <li>
         {{ $student->name }}
@@ -21,11 +22,11 @@
     </ul>
   @endforeach
   <br>
-  <p>Adapun aktifitas - aktifitas disekolah yang diikuti oleh {{ $name }}, yaitu : </p>
-  @foreach ($activities as $activity)
+  <p>Adapun aktifitas - aktifitas disekolah yang diikuti oleh {{ $students->name }}, yaitu : </p>
+  @foreach ($students->activities as $student)
     <ul>
       <li>
-        {{ $activity->name }}
+        {{ $student->name }}
       </li>
     </ul>
   @endforeach
