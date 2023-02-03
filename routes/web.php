@@ -33,7 +33,13 @@ use PhpParser\Builder\Function_;
 Route::get('/show/{id}', [StudentController::class, 'show'])->name('show');
 
 // menampilkan semua data
-Route::get('/', [StudentController::class, 'index']);
+Route::get('/', [StudentController::class, 'index'])->name('index');
 
 // menampilkan data yang sudah di filter di controller
 Route::get('/filter', [StudentController::class, 'filter']);
+
+// menambahkan data ke database
+Route::get('/create', [StudentController::class, 'create'])->name('create');
+
+// mengirim data ke dalam database
+Route::post('/create', [StudentController::class, 'store'])->name('store');

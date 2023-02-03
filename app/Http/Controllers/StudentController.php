@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use PhpParser\Builder\Function_;
 use SebastianBergmann\CodeUnit\FunctionUnit;
 
@@ -35,5 +36,29 @@ class StudentController extends Controller
             'students' => $students,
             'teacher' => $teacher,
         ]);
+    }
+
+    public function create()
+    {
+        return view('create', [
+            'teachers' => Teacher::all(),
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'score' => 'required',
+            'teacher_id' => 'required',
+        ]);
+
+        Student::create([
+            'name' => $request->name,
+            'score' => $request->score,
+            'teacher_id' => $request->teacher_id,
+        ]);
+
+        return Redirect::route('index');
     }
 }
