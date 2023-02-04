@@ -21,11 +21,11 @@
     <input type="number" name="score" value="{{ $student->score }}">
     <select name="teacher_id">
       @foreach ($teachers as $teacher)
-      @if (old('teacher_id', $student->teacher_id == $teacher->id))
-        <option value="{{ $teacher->id }}" selected>{{ $teacher->name }}</option>
-      @else
-        <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
-      @endif
+        @if (old('teacher_id', $student->teacher_id == $teacher->id))
+          <option value="{{ $teacher->id }}" selected>{{ $teacher->name }}</option>
+        @else
+          <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+        @endif
       @endforeach
     </select>
     <button type="submit">Update</button>

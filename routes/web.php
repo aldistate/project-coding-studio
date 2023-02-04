@@ -49,3 +49,6 @@ Route::get('/edit/{student}', [StudentController::class, 'edit'])->name('edit');
 
 // mengupdate data ke dalam database
 Route::patch('/update/{student}', [StudentController::class, 'update'])->name('update');
+
+// menghapus data
+Route::delete('/delete/{student}', [StudentController::class, 'delete'])->name('delete');
