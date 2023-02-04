@@ -43,3 +43,9 @@ Route::get('/create', [StudentController::class, 'create'])->name('create');
 
 // mengirim data ke dalam database
 Route::post('/create', [StudentController::class, 'store'])->name('store');
+
+// mendapatkan data inputan lama dari database
+Route::get('/edit/{student}', [StudentController::class, 'edit'])->name('edit');
+
+// mengupdate data ke dalam database
+Route::patch('/update/{student}', [StudentController::class, 'update'])->name('update');

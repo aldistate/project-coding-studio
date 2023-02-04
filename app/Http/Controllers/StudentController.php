@@ -61,4 +61,29 @@ class StudentController extends Controller
 
         return Redirect::route('index');
     }
+
+    public function edit(Student $student)
+    {
+        return view('edit', [
+            'student' => $student,
+            'teachers' => Teacher::all(),
+        ]);
+    }
+
+    public function update(Request $request, Student $student)
+    {
+        $request->validate([
+            'name' => 'required',
+            'score' => 'required',
+            'teacher_id' => 'required',
+        ]);
+
+        $student->update([
+            'name' => $request->name,
+            'score' => $request->score,
+            'teacher_id' => $request->teacher_id,
+        ]);
+
+        return Redirect::route('index');
+    }
 }
