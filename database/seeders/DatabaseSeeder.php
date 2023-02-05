@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Activity;
+use App\Models\Student;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
@@ -31,6 +34,12 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        Student::create([
+            'teacher_id' => 2,
+            'name' => 'Aldi Putra Nawasta',
+            'score' => 98,
+        ]);
+
         for ($i = 1; $i <= 5; $i++) { 
             DB::table('students')->insert([
                 'teacher_id' => $faker->randomDigitNot(0),
@@ -47,5 +56,17 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address(),
             ]);
         }
+
+        Activity::create([
+            'name' => 'Ngoding',
+        ]);
+
+        Activity::create([
+            'name' => 'Multimedia',
+        ]);
+
+        Activity::create([
+            'name' => 'Gaming',
+        ]);
     }
 }
