@@ -52,3 +52,6 @@ Route::patch('/update/{student}', [StudentController::class, 'update'])->name('u
 
 // menghapus data
 Route::delete('/delete/{student}', [StudentController::class, 'delete'])->name('delete');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
