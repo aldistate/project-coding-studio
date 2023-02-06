@@ -14,6 +14,9 @@
       @csrf
       <button type="submit">Logout</button>
     </form>
+    <p>Nama : {{ $user->name }}</p>
+    <p>E-Mail : {{ $user->email }}</p>
+    <p>Id : {{ $id }}</p>
   @else
     <a href="{{ route('login') }}">Login</a>
     <a href="{{ route('register') }}">Register</a>

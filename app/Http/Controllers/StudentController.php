@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use PhpParser\Builder\Function_;
 use SebastianBergmann\CodeUnit\FunctionUnit;
@@ -14,11 +15,16 @@ class StudentController extends Controller
 {
     public function index()
     {
+        $user = Auth::user();
+        $id = Auth::id();
+
         // $students = Student::all();
         $students = Student::paginate(2);
 
         return view('index', [
             'students' => $students,
+            'user' => $user,
+            'id' => $id,
         ]);
     }
 
