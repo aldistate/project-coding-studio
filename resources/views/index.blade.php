@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Show All Data</title>
 </head>
+
 <body>
+  @if (Auth::check())
+    <form action="{{ route('logout') }}" method="post">
+      @csrf
+      <button type="submit">Logout</button>
+    </form>
+  @else
+    <a href="{{ route('login') }}">Login</a>
+    <a href="{{ route('register') }}">Register</a>
+  @endif
+  <br>
   <p>Ini adalah tabel semua data siswa</p>
   <table border="1px">
     <th>Id</th>
@@ -39,4 +51,5 @@
 
   {{ $students->links('pagination::bootstrap-4') }}
 </body>
+
 </html>
