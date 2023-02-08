@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Function_;
 
@@ -52,6 +54,13 @@ Route::patch('/update/{student}', [StudentController::class, 'update'])->name('u
 
 // menghapus data
 Route::delete('/delete/{student}', [StudentController::class, 'delete'])->name('delete');
+
+// update password user
+Route::get('/update_password', [HomeController::class, 'update_password'])->name('update_password');
+
+// mengirim data password user yang mau diubah
+Route::patch('/store_password', [HomeController::class, 'store_password'])->name('store_password');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
