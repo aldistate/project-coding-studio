@@ -9,6 +9,11 @@
 </head>
 
 <body>
+  <p>Locale : {{ App::getLocale() }}</p>
+  <a href="{{ route('set_locale', 'en') }}">English</a>
+  <a href="{{ route('set_locale', 'id') }}">Indonesia</a>
+  <br>
+  
   @if (Auth::check())
     <form action="{{ route('logout') }}" method="post">
       @csrf
