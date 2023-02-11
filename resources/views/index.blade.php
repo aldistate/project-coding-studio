@@ -9,11 +9,15 @@
 </head>
 
 <body>
+  {{-- ini memakai message.php pada lang/id/message.php --}}
+  <h1>{{ __('message.welcome') }}</h1>
+  {{-- ini memakai id.json pada folder lang --}}
+  <h1>{{ __('Welcome to This Page') }}</h1>
   <p>Locale : {{ App::getLocale() }}</p>
   <a href="{{ route('set_locale', 'en') }}">English</a>
   <a href="{{ route('set_locale', 'id') }}">Indonesia</a>
   <br>
-  
+
   @if (Auth::check())
     <form action="{{ route('logout') }}" method="post">
       @csrf

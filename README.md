@@ -9,4 +9,5 @@
   <li>Validation</li>
   <li>Multirole</li>
   <li>Auth Middleware</li>
+  <li>Implementation of Dual Language in App</li>
 </ul>
