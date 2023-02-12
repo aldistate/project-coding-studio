@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\PictureController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
@@ -71,3 +72,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // put locale
 Route::get('/locale/{locale}', [LocaleController::class, 'set_locale'])->name('set_locale');
+
+// storage
+// menambahkan data pictures ke database
+Route::get('/picture/create', [PictureController::class, 'create'])->name('create_picture');
+
+// mengirim data pictures ke database
+Route::post('/picture/create', [PictureController::class, 'store'])->name('store_picture');
