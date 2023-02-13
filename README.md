@@ -12,4 +12,5 @@
   <li>Implementation of Dual Language in App</li>
   <li>Store Files</li>
   <li>Show Files</li>
+  <li>Delete Files</li>
 </ul>

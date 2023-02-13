@@ -82,3 +82,6 @@ Route::post('/picture/create', [PictureController::class, 'store'])->name('store
 
 // melihat data pictures dari database
 Route::get('/picture/{picture}', [PictureController::class, 'show'])->name('show_picture');
+
+// menghapus data picture dari database
+Route::delete('/picture/{picture}', [PictureController::class, 'delete'])->name('delete_picture');

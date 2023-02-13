@@ -36,4 +36,11 @@ class PictureController extends Controller
         $url = Storage::url($picture->path);
         return view('show_pictures', compact('url', 'picture'));
     }
+
+    public function delete(Picture $picture)
+    {
+        Storage::delete('public/' . $picture->path);
+        $picture->delete();
+        return Redirect::route('create_picture');
+    }
 }
