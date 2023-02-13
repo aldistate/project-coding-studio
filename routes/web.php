@@ -85,3 +85,9 @@ Route::get('/picture/{picture}', [PictureController::class, 'show'])->name('show
 
 // menghapus data picture dari database
 Route::delete('/picture/{picture}', [PictureController::class, 'delete'])->name('delete_picture');
+
+// menggandakan data picture dari database ke folder tertentu
+Route::get('/copy/{picture}', [PictureController::class, 'copy'])->name('copy_picture');
+
+// memindahkan data picture dari database ke folder tertentu
+Route::get('/move/{picture}', [PictureController::class, 'move'])->name('move_picture');

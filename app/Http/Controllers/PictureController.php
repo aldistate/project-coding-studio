@@ -43,4 +43,15 @@ class PictureController extends Controller
         $picture->delete();
         return Redirect::route('create_picture');
     }
+
+    public function copy(Picture $picture)
+    {
+        Storage::copy('public/' . $picture->path, 'copy/' . $picture->path);
+        return Redirect::route('create_picture');
+    }
+    public function move(Picture $picture)
+    {
+        Storage::move('public/' . $picture->path, 'move/' . $picture->path);
+        return Redirect::route('create_picture');
+    }
 }

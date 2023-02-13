@@ -13,4 +13,5 @@
   <li>Store Files</li>
   <li>Show Files</li>
   <li>Delete Files</li>
+  <li>Copy and Move Files</li>
 </ul>

@@ -15,5 +15,11 @@
     @csrf
     <button type="submit">Delete</button>
   </form>
+  <form action="{{ route('copy_picture', $picture) }}" method="get">
+    <button type="submit">Copy</button>
+  </form>
+  <form action="{{ route('move_picture', $picture) }}" method="get">
+    <button type="submit">Move</button>
+  </form>
 </body>
 </html>
