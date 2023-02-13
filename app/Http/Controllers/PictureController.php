@@ -30,4 +30,10 @@ class PictureController extends Controller
         
         return Redirect::route('create_picture');
     }
+
+    public function show(Picture $picture)
+    {
+        $url = Storage::url($picture->path);
+        return view('show_pictures', compact('url', 'picture'));
+    }
 }

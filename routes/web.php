@@ -79,3 +79,6 @@ Route::get('/picture/create', [PictureController::class, 'create'])->name('creat
 
 // mengirim data pictures ke database
 Route::post('/picture/create', [PictureController::class, 'store'])->name('store_picture');
+
+// melihat data pictures dari database
+Route::get('/picture/{picture}', [PictureController::class, 'show'])->name('show_picture');

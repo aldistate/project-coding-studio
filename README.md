@@ -11,4 +11,5 @@
   <li>Auth Middleware</li>
   <li>Implementation of Dual Language in App</li>
   <li>Store Files</li>
+  <li>Show Files</li>
 </ul>
