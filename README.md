@@ -15,4 +15,5 @@
   <li>Delete Files</li>
   <li>Copy and Move Files</li>
   <li>Create Unit Test</li>
+  <li>Create Feature Test</li>
 </ul>
