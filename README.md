@@ -14,4 +14,5 @@
   <li>Show Files</li>
   <li>Delete Files</li>
   <li>Copy and Move Files</li>
+  <li>Create Unit Test</li>
 </ul>
